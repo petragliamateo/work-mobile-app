@@ -1,0 +1,37 @@
+Idea principal: Aplicación donde podes crear tu rutina de ejercicios, compartirla y descargar de la comunidad.
+
+
+Rutina: Se presiona el botón de comenzar entrenamiento 'START' y se pasa al modo ejercicio:
+  la rutina cuenta con 1 conjunto de vueltas. estas vueltas pueden ser iguales o distintas
+  cada vuelta es un conjunto de ejercicios, cada ejercicio puede ser p.e. 5 abs, 10s de plancha, etc
+    Los ejercicios de tiempo se pone un botón de start, y comienza cuenta atras el tiempo.
+
+    La screen en estos ejercicios consta de:
+      0. En la navbar la progresion, que ejercicio y etapa vas y cuanto falta
+      1. Nombre del ejercicios, en la parte superior abajo del navbar
+      2. En el medio y grande un icono del ejercicio (imagen png transparente de 1 color)
+      3. Abajo y grande botón de siguiente (o start para los cronometrados y cuendo termina siguiente)
+      4. Abajo y chico botón de saltar ejercicio.
+
+    La idea es poder compartir distintas rutinas, por lo tanto estas se pueden guardar como objetos (o modelos para MongoDB):
+    Por ejemplo, la rutina de checkpoints tendría el objeto rutina:
+      {
+        name: 'Checkpoints',
+        description: '...',
+        user: ObjectID(),
+        id: ObjectID(),
+        work: [
+          [ { name: 'run', isTimed: true, amout: null, time: 600, img: 'runner' } ],
+          [ { name: 'abs short', isTimed: false, amout: 100, time: null, img: 'abs' }, { name: 'pushups', ... } ],
+          [ { name: 'run', isTimed: true, amout: null, time: 600, img: 'runner' } ],
+          [ { name: 'abs short', isTimed: false, amout: 100, time: null, img: 'abs' }, { name: 'pushups', ... } ],
+          [ { name: 'sprint', isTimed: true, amout: null, time: 60, img: 'sprint' } ],
+        ]
+      }
+
+    Mientras que cada ejercicio tendria el objeto ejercicio:
+      { name: string, isTimed: boolean, amout: number (rep), time: number (seg), img: string (nombre clave de la imagen) }
+    La idea es que vengan ya predefinidos los ejercicios más comunes (abs, flexiones, plancha, etc), donde se puedan elegir y cambiar repeticiones o tiempo
+    Y que sino puedas crear el tuyo, eligiendo nombre, imagen, si es por tiempo y sus cantidades.
+
+    Cuando se cree una rutina, para cada ejercicio se pueden modificar todos los valores, las imagenes vienen con la app no se pueden subir.
