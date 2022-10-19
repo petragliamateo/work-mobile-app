@@ -15,6 +15,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import Header from './src/components/Header';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -23,6 +24,7 @@ const App = () => {
     <SafeAreaView>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <Header />
         <View>
           <Text>Hola</Text>
         </View>
