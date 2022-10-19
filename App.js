@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import {
   SafeAreaView,
@@ -15,21 +7,26 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import {NativeBaseProvider} from 'native-base';
 import Header from './src/components/Header';
+import Navbar from './src/components/Navbar';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <SafeAreaView>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Header />
-        <View>
-          <Text>Hola</Text>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <NativeBaseProvider>
+      <SafeAreaView>
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        <ScrollView contentInsetAdjustmentBehavior="automatic">
+          <Navbar />
+          <Header />
+          <View>
+            <Text>Hola</Text>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </NativeBaseProvider>
   );
 };
 
