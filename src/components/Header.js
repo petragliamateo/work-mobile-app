@@ -1,12 +1,12 @@
 import React from 'react';
-import {Box, Text, Avatar} from 'native-base';
+import {Box, Text, Avatar, ScrollView} from 'native-base';
 import playFill from '../icons/play-fill.png';
 
 const Header = () => {
   return (
-    <Box bg="coolGray.800" p="10">
+    <ScrollView bg="coolGray.700" p="10" h="full">
       <Avatar source={playFill} bg="red.500" alignSelf="center" size="2xl" />
-    </Box>
+    </ScrollView>
   );
 };
 export default Header;

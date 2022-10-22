@@ -1,15 +1,7 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 import {NativeBaseProvider} from 'native-base';
-import Header from './src/components/Header';
-import Navbar from './src/components/Navbar';
+import Start from './src/screens/Start';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -18,13 +10,7 @@ const App = () => {
     <NativeBaseProvider>
       <SafeAreaView>
         <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <Navbar />
-          <Header />
-          <View>
-            <Text>Hola</Text>
-          </View>
-        </ScrollView>
+        <Start />
       </SafeAreaView>
     </NativeBaseProvider>
   );
