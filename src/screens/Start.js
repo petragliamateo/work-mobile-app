@@ -1,15 +1,16 @@
 import React from 'react';
-import {ScrollView, useWindowDimensions} from 'react-native';
-import Header from '../components/Header';
+import {View, useWindowDimensions} from 'react-native';
+import Header from '../components/Main';
 import Navbar from '../components/Navbar';
 
 const Start = () => {
   let {height} = useWindowDimensions();
+  height -= 60;
   return (
-    <ScrollView contentInsetAdjustmentBehavior="automatic" style={{height}}>
+    <View style={{height}}>
       <Navbar />
       <Header />
-    </ScrollView>
+    </View>
   );
 };
 
