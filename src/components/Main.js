@@ -1,6 +1,6 @@
 import React from 'react';
-import {Text, Avatar, View} from 'native-base';
-import playFill from '../icons/play-fill.png';
+import {Text, View} from 'native-base';
+import StartButton from './StartButton';
 
 const Main = () => {
   return (
@@ -8,7 +8,7 @@ const Main = () => {
       <Text alignSelf="center" fontSize="2xl" color="blue.200">
         Nombre del ejercicio
       </Text>
-      <Avatar source={playFill} bg="red.500" alignSelf="center" size="2xl" />
+      <StartButton />
       <Text alignSelf="center" fontSize="xl" color="blue.200">
         Fin
       </Text>
