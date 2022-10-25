@@ -30,7 +30,7 @@ const App = () => {
             {show === 'start' && <Start />}
             {show === 'home' && <Home />}
           </ScrollView>
-          <BottomNavigation setShow={setShow} />
+          <BottomNavigation setShow={setShow} show={show} />
         </SafeAreaView>
       </DataContext.Provider>
     </NativeBaseProvider>

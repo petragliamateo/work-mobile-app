@@ -6,7 +6,7 @@ const Navbar = () => {
   const {colors} = useContext(DataContext);
   return (
     <Box px={5} py={2} bgColor={colors[1]}>
-      <Text fontSize={24}>Navbar</Text>
+      <Text fontSize={24}>WinU</Text>
     </Box>
   );
 };

@@ -1,8 +1,7 @@
 import React, {useContext} from 'react';
-import {View, Text, Image, Pressable} from 'native-base';
+import {View, Image, Pressable} from 'native-base';
 import DataContext from '../contexts/DataContext';
 import {StyleSheet} from 'react-native';
-import houseFill from '../icons/house-door-fill.png';
 import house from '../icons/house-door.png';
 import start from '../icons/play-fill.png';
 

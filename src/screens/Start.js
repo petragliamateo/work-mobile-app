@@ -4,7 +4,7 @@ import Main from '../components/Main';
 
 const Start = () => {
   let {height} = useWindowDimensions();
-  height -= 60;
+  height -= 75;
   return (
     <View style={{height}}>
       <Main />
