@@ -1,9 +1,12 @@
 import React, {useContext} from 'react';
-import {View, Text} from 'native-base';
+import {View, Text, Image, Pressable} from 'native-base';
 import DataContext from '../contexts/DataContext';
 import {StyleSheet} from 'react-native';
+import houseFill from '../icons/house-door-fill.png';
+import house from '../icons/house-door.png';
+import start from '../icons/play-fill.png';
 
-const BottomNavigation = () => {
+const BottomNavigation = ({setShow}) => {
   const {colors} = useContext(DataContext);
   const styles = StyleSheet.create({
     container: {
@@ -31,7 +34,12 @@ const BottomNavigation = () => {
 
   return (
     <View style={styles.container}>
-      <Text fontSize={24}>BottomNavigation</Text>
+      <Pressable onPress={() => setShow('home')}>
+        <Image alt="house" source={house} style={styles.image} />
+      </Pressable>
+      <Pressable onPress={() => setShow('start')}>
+        <Image alt="start" source={start} style={styles.image} />
+      </Pressable>
     </View>
   );
 };

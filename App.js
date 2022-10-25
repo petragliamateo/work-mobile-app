@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   StatusBar,
@@ -15,7 +15,7 @@ import BottomNavigation from './src/components/BottomNavigation';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
-  const show = 'home';
+  const [show, setShow] = useState('home');
   const data = {colors: colors.main};
   let {height} = useWindowDimensions();
   height -= 75;
@@ -30,7 +30,7 @@ const App = () => {
             {show === 'start' && <Start />}
             {show === 'home' && <Home />}
           </ScrollView>
-          <BottomNavigation />
+          <BottomNavigation setShow={setShow} />
         </SafeAreaView>
       </DataContext.Provider>
     </NativeBaseProvider>
