@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, useWindowDimensions} from 'react-native';
-import Header from '../components/Main';
+import Main from '../components/Main';
 import Navbar from '../components/Navbar';
 
 const Start = () => {
@@ -9,7 +9,7 @@ const Start = () => {
   return (
     <View style={{height}}>
       <Navbar />
-      <Header />
+      <Main />
     </View>
   );
 };
